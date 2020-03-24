@@ -1,5 +1,4 @@
 #générateur page excel | Station météo
-import openpyxl
 from openpyxl import *
 from openpyxl.styles import *
 import time
