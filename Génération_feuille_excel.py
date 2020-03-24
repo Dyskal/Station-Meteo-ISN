@@ -24,7 +24,7 @@ for i in range(1,9,2):
 
 
 
-excel.save('C:\\Weather\\python_weather_datas.xlsx')
+excel.save(':\\python_weather_datas.xlsx')
 print('all done !')
 
 
