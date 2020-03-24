@@ -1,16 +1,16 @@
 from Data import getData
 from tkinter import *
-from sense_hat import SenseHat
+# from sense_hat import SenseHat
 
-sense = SenseHat()
+# sense = SenseHat()
 data = getData()
 main = Tk()
 
 main.title('Station météo')
-main.geometry('600x300')
+main.geometry('350x50')
 
 timesv = StringVar()
-timesv.set(" Date: " + data["Time"])
+timesv.set("Date: " + data["Time"])
 Time = Label(main, textvariable=timesv)
 Time.grid(row=0, column=0, columnspan=3)
 

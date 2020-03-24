@@ -1,32 +1,31 @@
-import openpyxl
+from openpyxl import *
+from Data import getData
 from openpyxl.styles import *
-from time import sleep
-#from sense_emu import SenseHat
-from datetime import datetime
-from collections import OrderedDict
+# from sense_emu import SenseHat
 
-#sense = SenseHat()
-
-data = OrderedDict()
+# sense = SenseHat()
+data = getData()
 i = 3
 
-#récupération des données
-
+# récupération des données
 while True:
-    #if appuie_joystic = True:
+    # if appuie_joystic = True:
     if int(input('Mettre à jour les données ? 1.Oui 2.Non\n')) == 1:
+        # Data.reloadData quand implémenté
+        """
         data["Time"] = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
         data["Temperature"] = 19
         data["Humidity"] = 50
         data["Pressure"] = 1024
-        """
+
         data["Time"] = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
         data["Température"] = round(sense.temp, 2)
         data["Pression"] = round(sense.pressure, 2)
         data["Humidité"] = round(sense.humidity, 2)
         """
-#intégration dans la page excel
-        excel = load_workbook('C:\\Weather\\python_weather_datas.xlsx')
+
+# intégration dans la page excel
+        excel = load_workbook(':\\python_weather_data.xlsx')
         page = excel.active
 
         page.merge_cells('A'+str(i)+':'+'B'+str(i))
@@ -40,7 +39,3 @@ while True:
         i += 1
         excel.save(':\\python_weather_datas.xlsx')
         print('Mise à jour éffectuée !')
-
-
-
-
