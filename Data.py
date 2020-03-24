@@ -8,6 +8,7 @@ def getData():
     data = OrderedDict()
 
     data["Time"] = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+
     data["Temperature"] = round(sense.temp, 2)
     data["Pressure"] = round(sense.pressure, 2)
     data["Humidity"] = round(sense.humidity, 2)
