@@ -1,4 +1,4 @@
-from sense_emu import SenseHat
+from sense_hat import SenseHat
 from datetime import datetime
 from collections import OrderedDict
 
@@ -8,11 +8,12 @@ def getData():
     data = OrderedDict()
 
     data["Time"] = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
-    data["Température"] = round(sense.temp, 2)
-    data["Pression"] = round(sense.pressure, 2)
-    data["Humidité"] = round(sense.humidity, 2)
+    data["Temperature"] = round(sense.temp, 2)
+    data["Pressure"] = round(sense.pressure, 2)
+    data["Humidity"] = round(sense.humidity, 2)
 
-    print(data["Time"])
-    print(data["Température"])
-    print(data["Pression"])
-    print(data["Humidité"])
+    # data["Temperature"] = "19.94"
+    # data["Pressure"] = "1012.97"
+    # data["Humidity"] = "43.83"
+
+    return data
