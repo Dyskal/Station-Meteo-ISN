@@ -1,5 +1,4 @@
 import openpyxl
-from openpyxl import *
 from openpyxl.styles import *
 from time import sleep
 #from sense_emu import SenseHat
@@ -39,7 +38,7 @@ while True:
         page['E'+str(i)] = data["Humidity"]
         page['G'+str(i)] = data["Pressure"]
         i += 1
-        excel.save('C:\\Weather\\python_weather_datas.xlsx')
+        excel.save(':\\python_weather_datas.xlsx')
         print('Mise à jour éffectuée !')
 
 
