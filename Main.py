@@ -1,11 +1,10 @@
-from Data import getData
 from Excel import *
 from tkinter import *
 # from sense_hat import SenseHat
 
 # sense = SenseHat()
 main = Tk()
-generateFile()
+createXlsx()
 
 timesv = StringVar()
 tempsv = StringVar()
@@ -19,6 +18,7 @@ def reloadData():
     tempsv.set("Température: " + data["Temperature"] + " °C")
     pressuresv.set("Pression: " + data["Pressure"] + " hPa")
     humiditysv.set("Humidité: " + data["Humidity"] + " %")
+    updateXslx()
 
 
 main.title('Station météo')
