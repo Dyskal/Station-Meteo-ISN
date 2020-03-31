@@ -131,4 +131,4 @@ dmypy.json
 # IDE files
 .idea
 .vs
-*.xslx
+python_weather_data.xlsx
