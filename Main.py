@@ -1,9 +1,11 @@
 from Data import getData
+from Excel import *
 from tkinter import *
 # from sense_hat import SenseHat
 
 # sense = SenseHat()
 main = Tk()
+generateFile()
 
 timesv = StringVar()
 tempsv = StringVar()
