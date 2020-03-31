@@ -1,10 +1,12 @@
 from Excel import *
 from tkinter import *
+from os import path, getcwd
 # from sense_hat import SenseHat
 
 # sense = SenseHat()
 main = Tk()
-createXlsx()
+if not path.exists(getcwd() + '\\python_weather_data.xlsx'):
+    createXlsx()
 
 timesv = StringVar()
 tempsv = StringVar()
