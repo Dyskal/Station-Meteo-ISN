@@ -17,6 +17,7 @@ def reloadData():
     tempsv.set("Température: " + data["Temperature"] + " °C")
     pressuresv.set("Pression: " + data["Pressure"] + " hPa")
     humiditysv.set("Humidité: " + data["Humidity"] + " %")
+    print("test")
 
 
 main.title('Station météo')
