@@ -3,7 +3,7 @@ from datetime import datetime
 from collections import OrderedDict
 
 
-def getData():
+def getData():      # Cette fonction permet de récuperer les données météo de la carte
     # sense = SenseHat()
     data = OrderedDict()
 
