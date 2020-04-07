@@ -8,6 +8,8 @@ main = Tk()     # On crée une fenetre tkinter
 if not path.exists(getcwd() + '\\python_weather_data.xlsx'):    # On vérifie si le fichier excel existe
     createXlsx()                                                # Sinon on le crée
 
+main.iconphoto(True, PhotoImage(file="resources/icon.png"))
+
 timesv = StringVar()        # On définit des chaines de caractère variables pour les labels tkinter
 tempsv = StringVar()
 pressuresv = StringVar()
