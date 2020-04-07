@@ -1,6 +1,6 @@
-# from sense_hat import SenseHat
 from datetime import datetime
 from collections import OrderedDict
+# from sense_hat import SenseHat
 
 
 def getData():      # Cette fonction permet de récuperer les données météo de la carte

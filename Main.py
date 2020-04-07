@@ -1,14 +1,15 @@
-from Excel import *
 from tkinter import *
+from tkinter.ttk import *
+from ttkthemes import *
 from os import path, getcwd
+from Excel import *
 # from sense_hat import SenseHat
 
 # sense = SenseHat()
-main = Tk()     # On crée une fenetre tkinter
+main = ThemedTk(background=True, theme="equilux")    # On crée une fenetre tkinter
 if not path.exists(getcwd() + '\\python_weather_data.xlsx'):    # On vérifie si le fichier excel existe
     createXlsx()                                                # Sinon on le crée
 
-main.iconphoto(True, PhotoImage(file="resources/icon.png"))
 
 timesv = StringVar()        # On définit des chaines de caractère variables pour les labels tkinter
 tempsv = StringVar()
@@ -27,6 +28,8 @@ def reloadData():       # Cette fonction permet de mettre à jour les données m
 
 main.title('Station météo')
 main.geometry('350x75')
+main.iconphoto(True, PhotoImage(file="resources/icon.png"))
+style = ThemedStyle(main)
 reloadData()
 
 Time = Label(main, textvariable=timesv)     # On crée un label qui affiche la date
