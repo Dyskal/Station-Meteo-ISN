@@ -3,9 +3,6 @@ from openpyxl.styles import Alignment
 from os import getcwd
 from Data import getData
 
-line = 3
-
-
 def createXlsx():   # Cette fonction permet de créer le fichier excel
     titres = ['Date', 'Température', 'Pression', 'Humidité']  # On définit les titres
     pos = 0
@@ -24,25 +21,25 @@ def createXlsx():   # Cette fonction permet de créer le fichier excel
         cell.value = titres[pos]
         cell.alignment = Alignment(horizontal='center', vertical='center')
         pos += 1
-
+    page['Z1'] = 3
     excel.save(getcwd() + '\\python_weather_data.xlsx')
     print('Fichier créé !')
 
 
 def updateXslx():   # Cette fonction permet de mettre à jour le fichier excel
-    global line
     data = getData()
     excel = load_workbook(getcwd() + '\\python_weather_data.xlsx')
     page = excel.active
 
-    page.merge_cells('A' + str(line) + ':' + 'B' + str(line))
-    page.merge_cells('C' + str(line) + ':' + 'D' + str(line))
-    page.merge_cells('E' + str(line) + ':' + 'F' + str(line))
-    page.merge_cells('G' + str(line) + ':' + 'H' + str(line))
-    page['A' + str(line)] = data["Time"]
-    page['C' + str(line)] = data["Temperature"]
-    page['E' + str(line)] = data["Pressure"]
-    page['G' + str(line)] = data["Humidity"]
-    line += 1
+    line = page['Z1']
+    page.merge_cells('A' + str(line.value) + ':' + 'B' + str(line.value))
+    page.merge_cells('C' + str(line.value) + ':' + 'D' + str(line.value))
+    page.merge_cells('E' + str(line.value) + ':' + 'F' + str(line.value))
+    page.merge_cells('G' + str(line.value) + ':' + 'H' + str(line.value))
+    page['A' + str(line.value)] = data["Time"]
+    page['C' + str(line.value)] = data["Temperature"]
+    page['E' + str(line.value)] = data["Pressure"]
+    page['G' + str(line.value)] = data["Humidity"]
+    page['Z1'] = line.value+1
     excel.save(getcwd() + '\\python_weather_data.xlsx')
     print('Mise à jour effectuée !')
