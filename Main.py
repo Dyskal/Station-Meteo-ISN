@@ -1,16 +1,15 @@
-from tkinter import *
-from tkinter.ttk import *
-from ttkthemes import *
-from os import path
-from Excel import *
+from tkinter import StringVar, PhotoImage
+from tkinter.ttk import Label, Button
+from ttkthemes import ThemedTk, ThemedStyle
+from os import path, getcwd
+from Excel import createXlsx, updateXslx
 # from sense_hat import SenseHat
 
-# sense = SenseHat()
 main = ThemedTk(background=True, theme="equilux")    # On crée une fenetre tkinter
 if not path.exists(getcwd() + '\\python_weather_data.xlsx'):    # On vérifie si le fichier excel existe
     createXlsx()                                                # Sinon on le crée
 
-
+# sense = SenseHat()
 timesv = StringVar()        # On définit des chaines de caractère variables pour les labels tkinter
 tempsv = StringVar()
 pressuresv = StringVar()

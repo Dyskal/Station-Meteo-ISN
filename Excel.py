@@ -1,5 +1,5 @@
-from openpyxl import *
-from openpyxl.styles import *
+from openpyxl import Workbook, load_workbook
+from openpyxl.styles import Alignment
 from os import getcwd
 from Data import getData
 
