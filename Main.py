@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 from ttkthemes import *
-from os import path, getcwd
+from os import path
 from Excel import *
 # from sense_hat import SenseHat
 
@@ -18,6 +18,7 @@ humiditysv = StringVar()
 
 
 def reloadData():       # Cette fonction permet de mettre à jour les données météo
+    from Data import getData
     data = getData()
     timesv.set("Date: " + data["Time"])
     tempsv.set("Température: " + data["Temperature"] + " °C")
