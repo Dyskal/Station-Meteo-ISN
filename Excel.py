@@ -3,6 +3,7 @@ from openpyxl.styles import Alignment
 from os import getcwd
 from Data import getData
 
+
 def createXlsx():   # Cette fonction permet de créer le fichier excel
     titres = ['Date', 'Température', 'Pression', 'Humidité']  # On définit les titres
     pos = 0
