@@ -1,13 +1,11 @@
 from tkinter import StringVar, PhotoImage
 from tkinter.ttk import Label, Button
 from ttkthemes import ThemedTk, ThemedStyle
-from os import path, getcwd
-from Excel import createXlsx, updateXslx
+from Excel import updateXslx, excelwb
 # from sense_hat import SenseHat
 
 main = ThemedTk(background=True, theme="equilux")  # On crée une fenetre tkinter
-if not path.exists(getcwd() + '\\python_weather_data.xlsx'):  # On vérifie si le fichier excel existe
-    createXlsx()  # Sinon on le crée
+activate = True
 
 # sense = SenseHat()
 timesv = StringVar()  # On définit des chaines de caractère variables pour les labels tkinter
@@ -26,12 +24,20 @@ def reloadData():  # Cette fonction permet de mettre à jour les données mété
     updateXslx()  # Et ensuite de mettre les valeurs dans le fichier Excel
 
 
+def close():  # Fonction pour fermer la fenetre correctement
+    global activate
+    activate = False
+    main.destroy()
+    excelwb.close()
+
+
 # sense.stick.direction_any = reloadData
 
 main.title('Station météo')
 main.geometry('350x75')
 main.iconphoto(True, PhotoImage(file="resources/icon.png"))
 style = ThemedStyle(main)
+main.protocol('WM_DELETE_WINDOW', close)
 reloadData()
 
 Time = Label(main, textvariable=timesv)  # On crée un label qui affiche la date
@@ -52,5 +58,5 @@ Reload.grid(row=2, column=0, columnspan=3)
 
 main.mainloop()
 
-while True:
+while activate:  # Boucle pour recevoir les appuis du joystick
     pass
