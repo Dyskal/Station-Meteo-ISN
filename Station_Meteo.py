@@ -55,11 +55,8 @@ def close():  # Fonction pour fermer la fenetre correctement
 
 main.title('Station météo')
 main.geometry('350x100')
-<<<<<<< HEAD:Station_Meteo.py
 main.iconphoto(True, PhotoImage(file="gui/resources/icon.png"))
-=======
 main.iconphoto(True, PhotoImage(file="resources/icon.png"))
->>>>>>> master:Main.py
 style = ThemedStyle(main)
 main.protocol('WM_DELETE_WINDOW', close)
 reloadData()
