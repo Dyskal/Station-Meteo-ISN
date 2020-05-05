@@ -133,6 +133,6 @@ dmypy.json
 .vs
 
 # Excel file
-python_weather_data.xlsx
+station_meteo/python_weather_data.xlsx
 python_weather_data.xlsx
 *.xlsx

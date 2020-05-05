@@ -1,7 +1,7 @@
 from tkinter import StringVar, PhotoImage
 from tkinter.ttk import Label, Button
 from ttkthemes import ThemedTk, ThemedStyle
-from Excel import updateXslx, excelwb
+from gui.Excel import updateXslx, excelwb
 # from sense_hat import SenseHat
 
 main = ThemedTk(background=True, theme="equilux")  # On crée une fenetre tkinter
@@ -36,7 +36,7 @@ def sense():  # Boucle pour recevoir les appuis du joystick et la direction de l
 
 
 def reloadData():  # Cette fonction permet de mettre à jour les données météo
-    from Data import getData
+    from gui.Data import getData
     data = getData()
     timesv.set("Date: " + data["Time"])
     tempsv.set("Température: " + data["Temperature"] + " °C")
@@ -55,7 +55,11 @@ def close():  # Fonction pour fermer la fenetre correctement
 
 main.title('Station météo')
 main.geometry('350x100')
+<<<<<<< HEAD:Station_Meteo.py
+main.iconphoto(True, PhotoImage(file="gui/resources/icon.png"))
+=======
 main.iconphoto(True, PhotoImage(file="resources/icon.png"))
+>>>>>>> master:Main.py
 style = ThemedStyle(main)
 main.protocol('WM_DELETE_WINDOW', close)
 reloadData()

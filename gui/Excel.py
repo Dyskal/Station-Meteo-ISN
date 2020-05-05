@@ -1,7 +1,9 @@
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment
 from os import getcwd, path
-from Data import getData
+from gui.Data import getData
+
+file = getcwd() + '/gui/python_weather_data.xlsx'
 
 
 def createXlsx():  # Cette fonction permet de créer le fichier excel
@@ -24,7 +26,7 @@ def createXlsx():  # Cette fonction permet de créer le fichier excel
         pos += 1
     page['Z1'] = 3
 
-    excel.save(getcwd() + '\\python_weather_data.xlsx')
+    excel.save(file)
     excel.close()
     print('Fichier créé !')
 
@@ -45,12 +47,12 @@ def updateXslx():  # Cette fonction permet de mettre à jour le fichier excel
     page['G' + str(line.value)] = data["Humidity"]
     page['Z1'] = line.value + 1
 
-    excelwb.save(getcwd() + '\\python_weather_data.xlsx')
+    excelwb.save(file)
     print('Mise à jour effectuée !')
 
 
-if not path.exists(getcwd() + '\\python_weather_data.xlsx'):  # On vérifie si le fichier excel existe
+if not path.exists(file):  # On vérifie si le fichier excel existe
     createXlsx()  # Sinon on le crée
-    excelwb = load_workbook(getcwd() + '\\python_weather_data.xlsx')
+    excelwb = load_workbook(file)
 else:
-    excelwb = load_workbook(getcwd() + '\\python_weather_data.xlsx')
+    excelwb = load_workbook(file)
