@@ -1,7 +1,9 @@
-from tkinter import StringVar, PhotoImage
+from tkinter import StringVar, PhotoImage, Canvas
 from tkinter.ttk import Label, Button
+from PIL import Image, ImageTk
 from ttkthemes import ThemedTk, ThemedStyle
 from gui.Excel import updateXslx, excelwb
+
 # from sense_hat import SenseHat
 
 main = ThemedTk(background=True, theme="equilux")  # On crée une fenetre tkinter
@@ -54,9 +56,8 @@ def close():  # Fonction pour fermer la fenetre correctement
 # sense.stick.direction_any = reloadData
 
 main.title('Station météo')
-main.geometry('350x100')
+main.geometry('515x615')  # 350x100
 main.iconphoto(True, PhotoImage(file="gui/resources/icon.png"))
-main.iconphoto(True, PhotoImage(file="resources/icon.png"))
 style = ThemedStyle(main)
 main.protocol('WM_DELETE_WINDOW', close)
 reloadData()
@@ -79,6 +80,12 @@ Reload.grid(row=2, column=0, columnspan=3)
 
 Direction = Label(main, textvariable=dirsv)  # On crée un label qui affiche la direction de la carte
 Direction.grid(row=3, column=0, columnspan=3)
+
+Compass = Canvas(main, width=500, height=500)
+image = Image.open("gui/resources/icon.png")
+tkimage = ImageTk.PhotoImage(image.rotate(90))
+canvas_obj = Compass.create_image(250, 250, image=tkimage)
+Compass.grid(row=4, column=0, columnspan=3)
 
 main.after(1000, sense)
 main.mainloop()
