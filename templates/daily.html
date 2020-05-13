@@ -1,11 +1,19 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!doctype html>
+<meta charset="UTF-8">
+{% load static %}
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>Station Météo ISN</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/icon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <script type="text/javascript" src="{% static 'javascript/scripts.js' %}"></script>
 </head>
 <body>
-
-</body>
-</html>
+    <div class="Menu">
+        <div id="Title_button" onclick="ReloadPage()">Station Météo</div>
+        <div class="Menu_elements">
+            <a href="home"><img class="mini_icon" src="{% static 'images/home.png' %}" />Accueil</a>
+            <a href="daily"><img class="mini_icon" src="{% static 'images/calendar.png' %}" />Données journalières</a>
+            <a href="about"><img class="mini_icon" src="{% static 'images/a_propos.png' %}" />À propos</a>
+        </div>
+    </div>
