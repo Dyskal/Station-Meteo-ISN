@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="UTF-8">
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}Station Météo ISN{% endblock %}</title>
+    <link href="{% static 'images/icon.png' %}" rel="shortcut icon" type="image/png" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
+    <script src="{% static 'javascript/scripts.js' %}" type="text/javascript"></script>
+</head>
+<body>
+<div class="Menu">
+    <div id="Title_button" onclick="ReloadPage()">Station Météo</div>
+    <div class="Menu_elements">
+        <a href="/home"><img class="mini_icon" src="{% static 'images/home.png' %}" />Accueil</a>
+        <a href="/daily"><img class="mini_icon" src="{% static 'images/calendar.png' %}" />Données journalières</a>
+        <a href="/about"><img class="mini_icon" src="{% static 'images/a_propos.png' %}" />À propos</a>
+    </div>
+</div>
+<div class="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

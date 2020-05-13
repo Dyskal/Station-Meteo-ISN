@@ -13,7 +13,7 @@ def main(request):
 
 
 def home(request):
-    return redirect('/')
+    return redirect("/")
 
 
 def daily(request):

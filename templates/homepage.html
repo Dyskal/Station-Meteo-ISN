@@ -1,33 +1,21 @@
 ﻿<!doctype html>
 <meta charset="UTF-8">
+{% extends "base.html" %}
 {% load static %}
 <html>
-    <head>
-        <title>Station Météo ISN</title>
-        <link rel="shortcut icon" type="image/png" href="{% static 'images/icon.png' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
-        <script type="text/javascript" src="{% static 'javascript/scripts.js' %}"></script>
-    </head>
-    <body>
-        <div class="Menu">
-            <div id="Title_button" onclick="ReloadPage()">Station Météo</div>
-            <div class="Menu_elements">
-                <a href="home"><img class="mini_icon" src="{% static 'images/home.png' %}" />Accueil</a>
-                <a href="daily"><img class="mini_icon" src="{% static 'images/calendar.png' %}" />Données journalières</a>
-                <a href="about"><img class="mini_icon" src="{% static 'images/a_propos.png' %}" />À propos</a>
-            </div>
-        </div>
-
-        <div class="circle">
-            <img class="icon Hu" src="{% static 'images/drop.png' %}" />
-            <img class="icon Temp" src="{% static 'images/thermometer.png' %}" />
-            <img class="icon Press" src="{% static 'images/barometer.png' %}" />
-        </div>
-        <div class="data">
-            <div class="Hu">{{humidity}} %</div>
-            <div class="Temp">{{temp}} °C</div>
-            <div class="Press">{{pressure}} hPa</div>
-        </div>
-        <p>Dernière mise à jour le : {{time}}</p>
-    </body>
+<body>
+{% block content %}
+<div class="circle">
+    <img class="icon Hu" src="{% static 'images/drop.png' %}" />
+    <img class="icon Temp" src="{% static 'images/thermometer.png' %}" />
+    <img class="icon Press" src="{% static 'images/barometer.png' %}" />
+</div>
+<div class="data">
+    <div class="Hu">{{humidity}} %</div>
+    <div class="Temp">{{temp}} °C</div>
+    <div class="Press">{{pressure}} hPa</div>
+</div>
+<p>Dernière mise à jour le : {{time}}</p>
+{% endblock %}
+</body>
 </html>
