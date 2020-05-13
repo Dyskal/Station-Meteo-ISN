@@ -5,4 +5,7 @@ from .views import *
 
 urlpatterns = [
     path('', main),
+    path('home/', home),
+    path('daily/', daily),
+    path('about/', about),
 ] + static(settings.STATIC_URL)
