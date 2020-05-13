@@ -1,0 +1,85 @@
+﻿body
+{
+    margin:0;
+    background-color:black;
+}
+#logo {
+    max-width: 15%;
+    float:right;
+    justify-content:center;
+    z-index:1;
+}
+
+.Menu {
+    position: relative;
+    display:inline-block;
+    border:none;
+    width:450px;
+    float:left;
+}
+#Title_button {
+    background-color: #1f1f1f;
+    background-size:200px;
+    background-image: url(/static/images/cloud_grey.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    text-align: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 80px 10px;
+    margin-top: 0;
+    font: bold 50px trebuchet ms;
+}
+#Title_button:hover {
+    background-image: url(/static/images/cloud_light_grey.png);
+    transition:1s;
+
+}
+.Menu_elements {
+    background-color: #504f4f;
+
+}
+.Menu_elements a {
+    font: 24px trebuchet ms;
+    display:block;
+    text-decoration:none;
+    padding:60px 10px;
+    color:white;
+    text-align:left;
+}
+.Menu_elements a:hover {
+    background-color: #6d6c6c;
+    transition:1s;
+}
+.mini_icon {
+    max-width:15%;
+    vertical-align: middle;
+    margin-right:50px;
+    margin-top:-10px;
+}
+
+.circle {
+    display: block;
+    position: relative;
+    float: left;
+    padding: 50px;
+}
+.circle.div {
+
+}
+.icon {
+    display:inline-block;
+    width: 250px;
+    height: 250px;
+    border-radius: 150px;
+}
+.Hu {
+    background-color: #0089d4;
+}
+.Temp {
+    background-color: #960000;
+}
+.Press {
+    background-color: #559300;
+}
