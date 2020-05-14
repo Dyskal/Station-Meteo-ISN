@@ -6,14 +6,14 @@
 <body>
 {% block content %}
 <div class="circle">
-    <img class="icon Hu" src="{% static 'images/drop.png' %}" />
-    <img class="icon Temp" src="{% static 'images/thermometer.png' %}" />
-    <img class="icon Press" src="{% static 'images/barometer.png' %}" />
+    <img class="icon humidity" src="{% static 'images/drop.png' %}" />
+    <img class="icon temp" src="{% static 'images/thermometer.png' %}" />
+    <img class="icon pression" src="{% static 'images/barometer.png' %}" />
 </div>
 <div class="data">
-    <div class="Hu">{{humidity}} %</div>
-    <div class="Temp">{{temp}} °C</div>
-    <div class="Press">{{pressure}} hPa</div>
+    <div class="humidity">{{humidity}} %</div>
+    <div class="temp">{{temp}} °C</div>
+    <div class="pression">{{pressure}} hPa</div>
 </div>
 <p>Dernière mise à jour le : {{time}}</p>
 {% endblock %}

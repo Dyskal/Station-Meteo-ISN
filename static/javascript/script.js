@@ -1,3 +1,3 @@
-function ReloadPage() {
+function reloadPage() {
     location.reload();
 }

@@ -22,7 +22,7 @@ p {
 #titleButton {
     background-color: #1f1f1f;
     background-size: 200px;
-    background-image: url(/static/images/cloud_grey.png);
+    background-image: url("/static/images/cloud_grey.d65013d1538f.png");
     background-repeat: no-repeat;
     background-position: top center;
     text-align: center;
@@ -34,7 +34,7 @@ p {
     font: bold 50px trebuchet ms;
 }
 #titleButton:hover {
-    background-image: url(/static/images/cloud_light_grey.png);
+    background-image: url("/static/images/cloud_light_grey.a0e44fc71643.png");
     transition: 1s;
 
 }

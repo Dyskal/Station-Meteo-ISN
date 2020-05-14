@@ -83,7 +83,7 @@ Direction.grid(row=3, column=0, columnspan=3)
 
 Compass = Canvas(main, width=500, height=500)
 image = Image.open("gui/resources/icon.png")
-tkimage = ImageTk.PhotoImage(image.rotate(90))
+tkimage = ImageTk.PhotoImage(image)
 canvas_obj = Compass.create_image(250, 250, image=tkimage)
 Compass.grid(row=4, column=0, columnspan=3)
 

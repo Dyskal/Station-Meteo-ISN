@@ -3,18 +3,18 @@
 {% load static %}
 <html>
 <head>
-    <title>{% block title %}Station Météo ISN{% endblock %}</title>
+    <title>Station Météo ISN</title>
     <link href="{% static 'images/icon.png' %}" rel="shortcut icon" type="image/png" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css" />
-    <script src="{% static 'javascript/scripts.js' %}" type="text/javascript"></script>
+    <script src="{% static 'javascript/script.js' %}" type="text/javascript"></script>
 </head>
 <body>
-<div class="Menu">
-    <div id="Title_button" onclick="ReloadPage()" title="Mettre à jour les données">Station Météo</div>
-    <div class="Menu_elements">
-        <a href="/home"><img class="mini_icon" src="{% static 'images/home.png' %}" />Accueil</a>
-        <a href="/daily"><img class="mini_icon" src="{% static 'images/calendar.png' %}" />Données journalières</a>
-        <a href="/about"><img class="mini_icon" src="{% static 'images/a_propos.png' %}" />À propos</a>
+<div class="menu">
+    <div id="titleButton" onclick="reloadPage()" title="Mettre à jour les données">Station Météo</div>
+    <div class="menuElements">
+        <a href="/home"><img class="miniIcon" src="{% static 'images/home.png' %}" />Accueil</a>
+        <a href="/daily"><img class="miniIcon" src="{% static 'images/calendar.png' %}" />Données journalières</a>
+        <a href="/about"><img class="miniIcon" src="{% static 'images/about.png' %}" />À propos</a>
     </div>
 </div>
 <div class="content">{% block content %}{% endblock %}</div>
