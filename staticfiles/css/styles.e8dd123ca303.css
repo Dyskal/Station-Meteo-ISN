@@ -1,17 +1,19 @@
-﻿body
-{
-    margin:0;
-    background-color:black;
+﻿body {
+    margin: 0;
+    background-color: black;
 }
+
 #logo {
     max-width: 15%;
-    float:right;
-    justify-content:center;
-    z-index:1;
+    float: right;
+    justify-content: center;
+    z-index: 1;
 }
+
 p {
     color: white;
 }
+
 .menu {
     position: relative;
     display: inline-block;
@@ -19,6 +21,7 @@ p {
     width: 450px;
     float: left;
 }
+
 #titleButton {
     background-color: #1f1f1f;
     background-size: 200px;
@@ -33,15 +36,18 @@ p {
     margin-top: 0;
     font: bold 50px trebuchet ms;
 }
+
 #titleButton:hover {
     background-image: url("/static/images/cloud_light_grey.a0e44fc71643.png");
     transition: 1s;
 
 }
+
 .menuElements {
     background-color: #504f4f;
 
 }
+
 .menuElements a {
     font: 24px trebuchet ms;
     display: block;
@@ -50,34 +56,41 @@ p {
     color: white;
     text-align: left;
 }
+
 .menuElements a:hover {
     background-color: #6d6c6c;
     transition: 1s;
 }
+
 .miniIcon {
     max-width: 15%;
     vertical-align: middle;
     margin-right: 50px;
     margin-top: -10px;
 }
+
 .circle {
     display: block;
     position: relative;
     float: left;
     padding: 50px;
 }
+
 .icon {
     display: inline-block;
     width: 250px;
     height: 250px;
     border-radius: 150px;
 }
+
 .humidity {
     background-color: #0089d4;
 }
+
 .temp {
     background-color: #960000;
 }
-.pression {
+
+.pressure {
     background-color: #559300;
 }
