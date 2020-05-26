@@ -3,10 +3,10 @@
     background-color: black;
 }
 
-p {
+#footer {
     color: white;
-
-    position:absolute;
+    text-align:end;
+    margin: -10px -120px;
 }
 
 .menu {
@@ -82,10 +82,6 @@ p {
     text-indent:50px;
     text-shadow: 5px 0 5px black;
 }
-.data:hover ~ .humidity {
-    background-color: #c20000;
-    transition: 3s;
-}
 
 .icon {
     vertical-align:top;
@@ -101,7 +97,6 @@ p {
 .humidity {
     background-image: radial-gradient(#003857, #429ed0);
 }
-
 .temp {
     background-image: radial-gradient(#2f0000, #c50303);
 }

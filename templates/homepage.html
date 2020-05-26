@@ -17,10 +17,8 @@
         <div class="placement">
             <img class="icon pressure" src="{% static 'images/barometer.png' %}" alt="" />
             <div class="data pressure">{{ pressure }} hPa</div>
+            <div id="footer">Dernière mise à jour le : {{ time }}</div>
         </div>
-            <div class="footer">
-                <p>Dernière mise à jour le : {{ time }}</p>
-            </div>
     </div>
     {% endblock content %}
 </body>
