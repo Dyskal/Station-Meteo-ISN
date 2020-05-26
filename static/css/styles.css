@@ -1,23 +1,17 @@
 ﻿body {
-    margin: 0;
+    margin: 0 0 0 0;
     background-color: black;
-}
-
-#logo {
-    max-width: 15%;
-    float: right;
-    justify-content: center;
-    z-index: 1;
 }
 
 p {
     color: white;
+
+    position:absolute;
 }
 
 .menu {
     position: relative;
     display: inline-block;
-    border: none;
     width: 450px;
     float: left;
 }
@@ -33,7 +27,6 @@ p {
     border: none;
     cursor: pointer;
     padding: 91px 10px;
-    margin-top: 0;
     font: bold 50px trebuchet ms;
 }
 
@@ -69,28 +62,49 @@ p {
     margin-top: -10px;
 }
 
-.circle {
-    display: block;
+.content {
     position: relative;
-    float: left;
-    padding: 50px;
+    display:grid;
+    margin: -7px 40px;
+    justify-content: space-between;
+}
+
+.data {
+    font: 50px trebuchet ms;
+    color: white;
+    padding: 10px;
+    margin: 90px 250px;
+    position: relative;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 400px;
+    height: 50px;
+    text-indent:50px;
+    text-shadow: 5px 0 5px black;
+}
+.data:hover ~ .humidity {
+    background-color: #c20000;
+    transition: 3s;
 }
 
 .icon {
+    vertical-align:top;
     display: inline-block;
-    width: 250px;
-    height: 250px;
-    border-radius: 150px;
+    width: 140px;
+    height: 140px;
+    border-radius: 140px;
+    float: left;
+    padding: 50px;
+    margin-top:10px;
 }
 
 .humidity {
-    background-color: #0089d4;
+    background-image: radial-gradient(#003857, #429ed0);
 }
 
 .temp {
-    background-color: #960000;
+    background-image: radial-gradient(#2f0000, #c50303);
 }
-
 .pressure {
-    background-color: #559300;
+    background-image: radial-gradient(#243e00, #559300);
 }

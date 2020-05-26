@@ -4,18 +4,24 @@
 {% load static %}
 <html lang="fr">
 <body>
-{% block content %}
-    <div class="circle">
-        <img class="icon humidity" src="{% static 'images/drop.png' %}" alt=""/>
-        <img class="icon temp" src="{% static 'images/thermometer.png' %}" alt=""/>
-        <img class="icon pressure" src="{% static 'images/barometer.png' %}" alt=""/>
+    {% block content %}
+    <div class="content">
+        <div class="placement">
+            <img class="icon humidity" src="{% static 'images/drop.png' %}" alt="" />
+            <div class="data humidity">{{ humidity }} %</div>
+        </div>
+        <div class="placement">
+            <img class="icon temp" src="{% static 'images/thermometer.png' %}" alt="" />
+            <div class="data temp">{{ temp }} °C</div>
+        </div>
+        <div class="placement">
+            <img class="icon pressure" src="{% static 'images/barometer.png' %}" alt="" />
+            <div class="data pressure">{{ pressure }} hPa</div>
+        </div>
+            <div class="footer">
+                <p>Dernière mise à jour le : {{ time }}</p>
+            </div>
     </div>
-    <div class="data">
-        <div class="humidity">{{ humidity }} %</div>
-        <div class="temp">{{ temp }} °C</div>
-        <div class="pressure">{{ pressure }} hPa</div>
-    </div>
-    <p>Dernière mise à jour le : {{ time }}</p>
-{% endblock content %}
+    {% endblock content %}
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <meta charset="UTF-8">
 {% load static %}
 <html lang="fr">
@@ -9,14 +9,14 @@
     <script src="{% static 'javascript/script.js' %}" type="text/javascript"></script>
 </head>
 <body>
-<div class="menu">
-    <div id="titleButton" onclick="reloadPage()" title="Mettre à jour les données">Station Météo</div>
-    <div class="menuElements">
-        <a href="/home"><img class="miniIcon" src="{% static 'images/home.png' %}" alt=""/>Accueil</a>
-        <a href="/daily"><img class="miniIcon" src="{% static 'images/calendar.png' %}" alt=""/>Données journalières</a>
-        <a href="/about"><img class="miniIcon" src="{% static 'images/about.png' %}" alt=""/>À propos</a>
+    <div class="menu">
+        <div id="titleButton" onclick="reloadPage()" title="Mettre à jour les données">Station Météo</div>
+        <div class="menuElements">
+            <a href="/home"><img class="miniIcon" src="{% static 'images/home.png' %}" alt=""/>Accueil</a>
+            <a href="/daily"><img class="miniIcon" src="{% static 'images/calendar.png' %}" alt=""/>Données journalières</a>
+            <a href="/about"><img class="miniIcon" src="{% static 'images/about.png' %}" alt=""/>À propos</a>
+        </div>
     </div>
-</div>
-<div class="content">{% block content %}{% endblock content %}</div>
+    <div class="content">{% block content %}{% endblock content %}</div>
 </body>
 </html>
