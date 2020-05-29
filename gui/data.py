@@ -3,7 +3,8 @@ from collections import OrderedDict
 # from sense_hat import SenseHat
 
 
-def getData():      # Cette fonction permet de récuperer les données météo de la carte
+def getData():
+    """Fonction permettant de récuperer les données météo de la carte"""
     # sense = SenseHat()
     data = OrderedDict()
 
@@ -18,3 +19,9 @@ def getData():      # Cette fonction permet de récuperer les données météo d
     data["Humidity"] = "43.83"
 
     return data
+
+
+if __name__ == '__main__':
+    weather = getData()
+    stats = [weather["Time"], weather["Temperature"], weather["Pressure"], weather["Humidity"]]
+    [print(item) for item in stats]

@@ -1,13 +1,14 @@
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment
 from os import getcwd, path
-from gui.Data import getData
+from gui.data import getData
 
 file = getcwd() + '/gui/python_weather_data.xlsx'
 
 
-def createXlsx():  # Cette fonction permet de créer le fichier excel
-    titres = ['Date', 'Température', 'Pression', 'Humidité']  # On définit les titres
+def createXlsx():
+    """Cette fonction permet de créer le fichier excel"""
+    titles = ['Date', 'Température', 'Pression', 'Humidité']  # On définit les titres
     pos = 0
     excel = Workbook()
     page = excel.active
@@ -21,7 +22,7 @@ def createXlsx():  # Cette fonction permet de créer le fichier excel
     print('Création des titres...')  # On crée les titres dans les cellules fusionnées
     for i in range(1, 9, 2):
         cell = page.cell(row=1, column=i)
-        cell.value = titres[pos]
+        cell.value = titles[pos]
         cell.alignment = Alignment(horizontal='center', vertical='center')
         pos += 1
     page['Z1'] = 3
@@ -31,7 +32,8 @@ def createXlsx():  # Cette fonction permet de créer le fichier excel
     print('Fichier créé !')
 
 
-def updateXslx():  # Cette fonction permet de mettre à jour le fichier excel
+def updateXslx():
+    """Cette fonction permet de mettre à jour le fichier excel"""
     data = getData()
     global excelwb
     page = excelwb.active
