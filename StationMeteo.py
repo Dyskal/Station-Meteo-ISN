@@ -11,7 +11,6 @@ images = [ImageTk.PhotoImage(Image.open("gui/resources/nord.png")),
           ImageTk.PhotoImage(Image.open("gui/resources/est.png")),
           ImageTk.PhotoImage(Image.open("gui/resources/sud.png")),
           ImageTk.PhotoImage(Image.open("gui/resources/ouest.png"))]
-imgIndice = 0  # A changer
 angle = 90  # On attribue manuellement un angle pour tester
 
 # sense = SenseHat()
@@ -42,7 +41,7 @@ def sense():
         directionVar.set('Ouest')
         compass.itemconfig(canvasImg, image=images[3])
         # sense.set_rotation(180)
-    # sense.show_letter(dirsv.get()[0])
+    # sense.show_letter(directionVar.get()[0])
     angle = randint(0, 360)
     main.after(1000, sense)
 
@@ -91,8 +90,8 @@ reloadButton.grid(row=2, column=0, columnspan=3)
 directionLabel = Label(main, textvariable=directionVar)  # On crée un label qui affiche la direction de la carte
 directionLabel.grid(row=3, column=0, columnspan=3)
 
-compass = Canvas(main, width=450, height=450)
-canvasImg = compass.create_image(0, 0, anchor='nw', image=images[imgIndice])
+compass = Canvas(main, width=450, height=450, bd=0, highlightthickness=0, background="#464646")
+canvasImg = compass.create_image(0, 0, anchor="nw", image=images[0])
 compass.grid(row=4, column=0, columnspan=3)
 
 main.after(1000, sense)
