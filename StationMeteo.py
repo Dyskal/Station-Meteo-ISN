@@ -1,3 +1,4 @@
+from random import randint
 from tkinter import StringVar, PhotoImage, Canvas
 from tkinter.ttk import Label, Button
 from PIL import Image, ImageTk
@@ -6,6 +7,11 @@ from gui.excel import updateXslx, excelwb
 # from sense_hat import SenseHat
 
 main = ThemedTk(background=True, theme="equilux")  # On crée une fenetre tkinter
+images = [ImageTk.PhotoImage(Image.open("gui/resources/nord.png")),
+          ImageTk.PhotoImage(Image.open("gui/resources/est.png")),
+          ImageTk.PhotoImage(Image.open("gui/resources/sud.png")),
+          ImageTk.PhotoImage(Image.open("gui/resources/ouest.png"))]
+imgIndice = 0  # A changer
 angle = 90  # On attribue manuellement un angle pour tester
 
 # sense = SenseHat()
@@ -22,18 +28,22 @@ def sense():
     global angle
     if angle < 45 or angle > 315:
         directionVar.set('Nord')
+        compass.itemconfig(canvasImg, image=images[0])
         # sense.set_rotation(90)
     elif angle < 135:
         directionVar.set('Est')
+        compass.itemconfig(canvasImg, image=images[1])
         # sense.set_rotation(0)
     elif angle < 225:
         directionVar.set('Sud')
+        compass.itemconfig(canvasImg, image=images[2])
         # sense.set_rotation(270)
     else:
         directionVar.set('Ouest')
+        compass.itemconfig(canvasImg, image=images[3])
         # sense.set_rotation(180)
     # sense.show_letter(dirsv.get()[0])
-    # angle += 20
+    angle = randint(0, 360)
     main.after(1000, sense)
 
 
@@ -45,7 +55,6 @@ def reloadData():
     temperatureVar.set("Température: " + data["Temperature"] + " °C")
     pressureVar.set("Pression: " + data["Pressure"] + " hPa")
     humidityVar.set("Humidité: " + data["Humidity"] + " %")
-    sense()
     updateXslx()  # Et ensuite de mettre les valeurs dans le fichier Excel
 
 
@@ -82,11 +91,8 @@ reloadButton.grid(row=2, column=0, columnspan=3)
 directionLabel = Label(main, textvariable=directionVar)  # On crée un label qui affiche la direction de la carte
 directionLabel.grid(row=3, column=0, columnspan=3)
 
-
-image = Image.open("gui/resources/icon.png")
-tkimage = ImageTk.PhotoImage(image)
-compass = Canvas(main, width=500, height=500)
-compass.create_image(250, 250, image=tkimage)
+compass = Canvas(main, width=450, height=450)
+canvasImg = compass.create_image(0, 0, anchor='nw', image=images[imgIndice])
 compass.grid(row=4, column=0, columnspan=3)
 
 main.after(1000, sense)
