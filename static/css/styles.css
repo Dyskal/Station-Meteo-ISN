@@ -6,13 +6,13 @@ body {
 #footer {
     color: white;
     text-align: end;
-    margin: -10px -120px;
+    margin: 0px -110px;
 }
 
 .menu {
     position: relative;
     display: inline-block;
-    width: 450px;
+    width: 456px;
     float: left;
 }
 
@@ -90,8 +90,8 @@ body {
     height: 140px;
     border-radius: 140px;
     float: left;
-    padding: 50px;
-    margin-top: 10px;
+    padding: 40px;
+    margin-top: 20px;
 }
 
 .humidity {
@@ -104,4 +104,16 @@ body {
 
 .pressure {
     background-image: radial-gradient(#243e00, #559300);
+}
+
+#graph {
+    width:103%;
+    height:auto;
+    margin: 10px 0px 0px;
+    position:relative;  
+}
+
+.arrow {
+    width:50px;
+    cursor:pointer;
 }

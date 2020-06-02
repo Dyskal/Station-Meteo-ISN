@@ -3,8 +3,19 @@
 {% load static %}
 <html lang="fr">
 <body>
-{% block content %}
-    <p>daily</p>
-{% endblock content %}
+    {% block content %}
+    <div>
+        <img id="graph" src="{% static 'images/graph_daily.png' %}" />
+    </div>
+    
+    <div class="arrow">
+        <div id="left_arrow">
+            <img onclick="reloadPage()" src="{% static 'images/arrow_left.png' %}" />
+        </div>
+        <div id="right_arrow">
+            <img onclick="reloadPage()"  src="{% static 'images/arrow_right.png' %}" />
+        </div>
+    </div>
+    {% endblock content %}
 </body>
 </html>
