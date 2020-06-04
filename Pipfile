@@ -12,6 +12,8 @@ daphne = "*"
 openpyxl = "*"
 ttkthemes = "*"
 sense-hat = "*"
+matplotlib = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.8"

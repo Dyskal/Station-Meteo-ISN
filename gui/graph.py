@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 plt.style.use('bmh')
-fig = plt.figure(figsize=(16,9))
+fig = plt.figure(figsize=(16, 9))
 ax = plt.axes()
 plt.title("Humidité (dernières 24h)", color="white", size="30")
 
