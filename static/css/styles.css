@@ -6,7 +6,7 @@ body {
 #footer {
     color: white;
     text-align: end;
-    margin: 0px -110px;
+    margin: 0 -110px;
 }
 
 .menu {
@@ -107,13 +107,13 @@ body {
 }
 
 #graph {
-    width:103%;
-    height:auto;
+    width: 103%;
+    height: auto;
     margin: 10px 0px 0px;
-    position:relative;  
+    position: relative;
 }
 
 .arrow {
-    width:50px;
-    cursor:pointer;
+    width: 50px;
+    cursor: pointer;
 }

@@ -4,16 +4,16 @@
 <html lang="fr">
 <body>
     {% block content %}
-    <div>
-        <img id="graph" src="{% static 'images/graph_daily.png' %}" />
+    <div class="graphimg">
+        <img id="graph" src="/graph.png" alt="" />
     </div>
-    
+
     <div class="arrow">
         <div id="left_arrow">
-            <img onclick="reloadPage()" src="{% static 'images/arrow_left.png' %}" />
+            <img onclick="reloadPage()" src="{% static 'images/arrow_left.png' %}" alt="" />
         </div>
         <div id="right_arrow">
-            <img onclick="reloadPage()"  src="{% static 'images/arrow_right.png' %}" />
+            <img onclick="reloadPage()" src="{% static 'images/arrow_right.png' %}" alt="" />
         </div>
     </div>
     {% endblock content %}
