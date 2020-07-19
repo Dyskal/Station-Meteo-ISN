@@ -359,10 +359,10 @@
         },
         "ttkthemes": {
             "hashes": [
-                "sha256:178dec94b4e3342b0a6f4b2adfaf40de8016ba553b6fac0845cb55f4ad443a69"
+                "sha256:dff635b3479477542f634b8ebe4cdb10eeaf6fb783c330fb38124dd20c07e40a"
             ],
             "index": "pypi",
-            "version": "==3.0.0"
+            "version": "==3.1.0"
         },
         "twisted": {
             "extras": [
